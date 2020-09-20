@@ -30,6 +30,7 @@
 
             <header class="header">
                 <div class="topbar">
+                    <img class="user-profile-picture-header" src="./Images/userprofilephoto.jfif" alt="Profile Photo">
                     <div class="home-title">Home</div>            
                     <span class="snowflake-logo"><i class="fa fa-snowflake-o fa-lg"></i></span>   
                 </div>
@@ -55,7 +56,7 @@
 <!-- POST 1-->
             <div class="Post-container">  
                 <div class=post>
-                    <img class="img-post" src="./Images/profilephoto1.jfif" alt="image">
+                    <img class="profile_img-post" src="./Images/profilephoto1.jfif" alt="image">
                     <div class="post-content">
                         <div class="Name2">
                             <div class="Name">David Miller</div>
@@ -73,14 +74,14 @@
 
 <!-- POST 2 -->
                 <div class=post>
-                    <img class="img-post" src="./Images/profilephoto2.jfif" alt="image">
+                    <img class="profile_img-post" src="./Images/profilephoto2.jfif" alt="image">
                     <div class="post-content">
                         <div class="Name2">
                             <div class="Name">Richard Jones</div>
                             <div class="ID">@richard97 · 8m</div>
                         </div>
                         <div class="content-text">A Bald Eagle named Bruce gives photographer Steve Biro the shot of a lifetime / 2019 </div>
-                        <img class="content-img" src="./Images/post2-img.jfif" alt="image" style="width:473px;height:323px;>
+                        <img class="content-img" src="./Images/post2-img.jfif" alt="image" >
                         <div class="icons">
                             <span class="comment"><i class="fa fa-comment-o"> 12</i></span>
                             <span class="retweet"><i class="fa fa-retweet"> 2</i></span>
@@ -91,7 +92,7 @@
                 </div>
 <!-- POST 3 -->
                 <div class=post>
-                    <img class="img-post" src="./Images/profilephoto3.jfif" alt="image">
+                    <img class="profile_img-post" src="./Images/profilephoto3.jfif" alt="image">
                     <div class="post-content">
                         <div class="Name2">
                             <div class="Name">Sophia Tylor</div>
@@ -108,7 +109,7 @@
                 </div>
 <!-- POST 4 -->
                 <div class=post>
-                    <img class="img-post" src="./Images/profilephoto4.jfif" alt="image" >
+                    <img class="profile_img-post" src="./Images/profilephoto4.jfif" alt="image" >
                     <div class="post-content">
                         <div class="Name2">
                             <div class="Name">Mathew White</div>
@@ -126,14 +127,14 @@
 
 <!-- POST 5 -->
                 <div class=post>
-                    <img class="img-post" src="./Images/profilephoto5.jfif" alt="image">
+                    <img class="profile_img-post" src="./Images/profilephoto5.jfif" alt="image">
                     <div class="post-content">
                         <div class="Name2">
                             <div class="Name">Kevin Perez</div>
                             <div class="ID">@perezkevin · 2h</div>
                         </div>
                         <div class="content-text"></div>
-                        <img class="content-img" src="./Images/post5-img.jpg" alt="image" style="width:473px;height:323px;>
+                        <img class="content-img" src="./Images/post5-img.jpg" alt="image" >
                         <div class="icons">
                             <span class="comment"><i class="fa fa-comment-o"> 9</i></span>
                             <span class="retweet"><i class="fa fa-retweet"> 6</i></span>
@@ -144,14 +145,14 @@
                 </div>
 <!-- POST 6 -->
                 <div class=post>
-                    <img class="img-post" src="./Images/profilephoto6.jfif" alt="image">
+                    <img class="profile_img-post" src="./Images/profilephoto6.jfif" alt="image">
                     <div class="post-content">
                         <div class="Name2">
                             <div class="Name">Zoey</div>
                             <div class="ID">@zoeylee · 3h</div>
                         </div>
                         <div class="content-text">On the importance of good typesetting and layout.</div>
-                        <img class="content-img" src="./Images/post6-img.jpg" alt="image" style="width:473px;height:323px;>
+                        <img class="content-img" src="./Images/post6-img.jpg" alt="image" >
                         <div class="icons">
                             <span class="comment"><i class="fa fa-comment-o"> 1</i></span>
                             <span class="retweet"><i class="fa fa-retweet"> 4 </i></span>
@@ -162,7 +163,7 @@
                 </div>
 <!-- POST 7 -->
                 <div class=post>
-                    <img class="img-post" src="./Images/profilephoto7.jfif" alt="image">
+                    <img class="profile_img-post" src="./Images/profilephoto7.jfif" alt="image">
                     <div class="post-content">
                         <div class="Name2">
                             <div class="Name">Rita Jonas</div>
@@ -179,8 +180,8 @@
                 </div>
 <!-- POST 8 -->                
 
-                <div class=post>
-                    <img class="img-post" src="./Images/profilephoto8.jfif" alt="image">
+                <div class=post id="post-8">
+                    <img class="profile_img-post" src="./Images/profilephoto8.jfif" alt="image">
                     <div class="post-content">
                         <div class="Name2">
                             <div class="Name">Rick Charles</div>
@@ -352,30 +353,23 @@
     
         </section>
           
- 
-
-
-
-
-
-
-
-
     </main>
 
+<!--Responsive NavBar-->    
+    <nav>
+        <div class="container">
+            <div><i class="fa fa-home fa-2x"></i></div>
+            <div><i class="fa fa-search fa-2x"></i></div>
+            <div><i class="fa fa-bell-o fa-2x"></i></div>
+            <div><i class="fa fa-envelope-o fa-2x"></i></div>
+        </div>
+    </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="floating-button">
+        <a href="#" class="float">
+            <i class="fa fa-location-arrow fa-2x my-float"></i>
+            </a>
+    </div>
 
 
     
