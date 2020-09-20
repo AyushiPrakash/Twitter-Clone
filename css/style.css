@@ -15,6 +15,7 @@
     Ubuntu, "Helvetica Neue", sans-serif;
 }
 
+
 /* LEFT SECTION */
 
 .left-spacer {
@@ -28,6 +29,11 @@
   align-items: flex-start;
   position: fixed;
   margin-left: 10%;
+}
+
+.left-section-R,
+.left-spacer-R{
+  display: none;
 }
 
 .navlink,
@@ -218,6 +224,29 @@ i {
 .like,
 .share {
   padding-left: 5rem;
+}
+
+
+/*Hover*/
+
+.comment-hover:hover{
+  color:#0d0cb5;
+  text-shadow: 0 0 5px #0d0cb5 ;
+}
+
+.retweet-hover:hover{
+  color:#79d70f;
+  text-shadow: 0 0 10px #79d70f  ;
+}
+
+.like-hover:hover{
+  color:#ec0101;
+  text-shadow: 0 0 5px #ec0101 ;
+}
+
+.share-hover:hover{
+  color: #12cad6;
+  text-shadow: 0 0 10px #12cad6 ;
 }
 
 /* RIGHT SECTION */
@@ -530,7 +559,7 @@ nav .fa {
 
 /*-----------------------------------Media Query----------------------------------*/
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 600px){
   body {
     height: 100vh;
     /* overflow: scroll; */
@@ -538,9 +567,11 @@ nav .fa {
 
   .left-section,
   .left-spacer,
+  .left-section-R,
+  .left-spacer-R,
   .right-section,
   .WH,
-  .border-posts-container {
+  .border-posts-container{
     display: none;
   }
 
@@ -555,8 +586,8 @@ nav .fa {
     flex-direction: row;
     justify-content: space-between;
     border-bottom: solid var(--main-border-color) 1px;
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background-color: white;
   }
 
@@ -565,13 +596,13 @@ nav .fa {
     font-size: 22px;
     font-weight: 700;
     margin-left: -14rem;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
   }
 
    /*Post*/
 
   #post-8{
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
 
   .content-img{
@@ -580,13 +611,13 @@ nav .fa {
   }
   
   .comment {
-    padding-left: -0.5rem;
+    padding-left: 0;
   }
   
   .retweet,
   .like,
   .share {
-    padding-left: 1.5rem;
+    padding-left: 2rem;
   }
 
   /*Footer*/
@@ -606,8 +637,8 @@ nav .fa {
   .float{
     display: block;
     position:fixed;
-    width:70px;
-    height:70px;
+    width:60px;
+    height:60px;
     bottom:90px;
     right:30px;
     background-color:var(--main-button-color);
@@ -616,7 +647,142 @@ nav .fa {
   }
   
   .my-float{
-    margin: 22px;
+    margin: 16px;
+  }
+
+}
+
+/*-----------------------------------Media Query----------------------------------*/
+
+@media screen  and (min-width: 601px) and (max-width: 768px){
+
+  body {
+    height: 100vh;
+  }
+
+  .right-section,
+  .left-section{
+    display: none;
+  }
+
+  .left-spacer-R{
+    flex: 0.5;
+  }
+
+  .left-section-R{
+    display: block;
+    position: fixed;
+    margin-left: 8%;
+  }
+
+  .search-container{
+    width:26%;
+  }
+
+  .WHR,
+  .follow_Section{
+    width: 80%;
+  }
+  
+  /*Floating Button*/
+
+  .float{
+    display: block;
+  }
+
+  .float{
+    display: block;
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:45%;
+    right:86%;
+    background-color:var(--main-button-color);
+    color:#FFF;
+    border-radius:50px;
+  }
+  
+  .my-float{
+    margin: 16px;
+  }
+
+}
+
+/*-----------------------------------Media Query----------------------------------*/
+
+/* @media screen and (orientation:landscape){
+  body {
+    height: 100vh;
+  }
+
+  .left-section,
+  .tweet-button1{
+    display: none;
+  }  
+
+  .left-spacer-R{
+    flex: 0.5;
+  }
+
+  .left-section-R{
+    display: block;
+    position: fixed;
+    margin-left: 10%;
+  }
+  .search-container{
+    width:26%;
+  }
+
+  .WHR,
+  .follow_Section{
+    width: 80%;
+  }
+
+} */
+
+/*-----------------------------------Media Query----------------------------------*/
+
+@media screen and (min-width: 1280px) and (max-width: 1300px) {
+
+  body {
+    height: 100vh;
+  }
+
+  .left-section-R,
+  .left-spacer-R{
+    display: none;
+  }
+
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    margin-left: 3%;
+  }
+
+  .tweet-button1 {
+    transition: 0.2s all;
+    outline: none;
+    background-color: #1da1f2;
+    border: none;
+    margin-top: 0.5rem;
+    padding: 12px 60px;
+    margin-left: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4rem;
+    font-size: 20px;
+    color: white;
+  }
+
+  .search-container{
+    width:26%;
+  }
+
+  .WHR,
+  .follow_Section{
+    width: 80%;
   }
 
 }
