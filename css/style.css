@@ -16,7 +16,7 @@
 }
 
 
-/* LEFT SECTION */
+/*-------------------------- LEFT SECTION--------------------------------------- */
 
 .left-spacer {
   flex: 1.3;
@@ -60,7 +60,7 @@ i {
   color: var(--main-button-color);
 }
 
-/* MIDDLE SECTION */
+/*--------------------------------- MIDDLE SECTION---------------------------------- */
 
 .middle-section {
   flex: 2;
@@ -146,6 +146,11 @@ i {
   color: var(--main-button-color);
 }
 
+.media-icons-hover:hover{
+  color:var(--main-button-color);
+  text-shadow: 0 0 22px var(--main-button-color) ;
+}
+
 .border-posts-container {
   background-color: #e6ecf0;
   padding: 0.25rem;
@@ -164,7 +169,7 @@ i {
   padding: 0.5rem;
 }
 
-/*POSTS*/
+/*-----------------POSTS------------------*/
 
 .post-content {
   padding: 0.8rem;
@@ -227,16 +232,16 @@ i {
 }
 
 
-/*Hover*/
+/*-----------Hover-------------*/
 
 .comment-hover:hover{
-  color:#0d0cb5;
-  text-shadow: 0 0 5px #0d0cb5 ;
+  color:rgb(5, 5, 173);
+  text-shadow: 0 0 10px rgb(5, 5, 173);
 }
 
 .retweet-hover:hover{
-  color:#79d70f;
-  text-shadow: 0 0 10px #79d70f  ;
+  color:rgb(5, 194, 5);
+  text-shadow: 0 0 15px rgb(5, 194, 5);
 }
 
 .like-hover:hover{
@@ -246,10 +251,10 @@ i {
 
 .share-hover:hover{
   color: #12cad6;
-  text-shadow: 0 0 10px #12cad6 ;
+  text-shadow: 0 0 15px #12cad6 ;
 }
 
-/* RIGHT SECTION */
+/*------------------------------- RIGHT SECTION------------------------------------- */
 
 .right-section {
   flex: 1.7;
@@ -288,7 +293,7 @@ i {
   font-size: 1rem;
 }
 
-/* WHAT'S HAPPENING */
+/*------------ WHAT'S HAPPENING --------------------*/
 
 .WHR {
   border: none var(--main-border-color) 1px;
@@ -390,7 +395,7 @@ i {
   border-bottom-left-radius: 1rem;
 }
 
-/* WHO TO FOLLOW */
+/* ----------------------WHO TO FOLLOW----------------------- */
 
 .follow_Section {
   border: none var(--main-border-color) 1px;
@@ -455,7 +460,7 @@ i {
   flex: 0.4;
 }
 
-/*Terms and conditions*/
+/*-----------------Terms and conditions----------------*/
 .footer {
   display: flex;
   justify-content: space-evenly;
@@ -535,7 +540,7 @@ i {
 	display: none;
 }
 
-/*Responsive NavBar*/
+/*--------------Responsive NavBar-----------------------*/
 
 nav {
   display: none;
