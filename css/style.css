@@ -7,15 +7,68 @@
   --main-button-color: #1da1f2;
   --main-text1-color: black;
   --main-border-color: rgb(212, 206, 206);
+  --main-bg-color: white;
+  --search-bar: rgb(241, 239, 239);
+  --whats: #f5f8fa;
+  --wtf-hover: #e6ecf0;
 }
-
 .main {
   display: flex;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Ubuntu, "Helvetica Neue", sans-serif;
 }
+.dark-mode {
+  transition: 1ms;
+  background: rgb(21, 32, 43);
+}
 
+.switchBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 60px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 2px 2px 5px #00000073,
+    inset -2px -2px 5px rgba(25, 28, 32, 0.288);
+  -webkit-appearance: none;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0.7);
+}
+.switchBtn:checked {
+  background-color: rgb(42, 63, 83);
+}
+.switchBtn::before {
+  font-family: "Font Awesome 4 Free";
+  font-weight: 900;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* content: ''; */
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  border-color: #fff;
+  transform: scale(0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 
+  transition: ease-in-out 0.65s;
+}
+.switchBtn2::before {
+  transition: ease-in-out 0.65s;
+  content: "";
+}
+.switchBtn:checked::before {
+  left: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
 /*-------------------------- LEFT SECTION--------------------------------------- */
 
 .left-spacer {
@@ -32,7 +85,7 @@
 }
 
 .left-section-R,
-.left-spacer-R{
+.left-spacer-R {
   display: none;
 }
 
@@ -43,6 +96,7 @@
   font-weight: 700;
   padding: 0.85rem 1.7rem;
   margin-left: -1.7rem;
+  cursor: pointer;
 }
 
 i {
@@ -59,7 +113,19 @@ i {
 .active {
   color: var(--main-button-color);
 }
-
+sup {
+  font-size: 12px;
+  background-color: #1da1f2;
+  color: white;
+  border-radius: 15px;
+  padding: 3px;
+  position: absolute;
+  margin-left: -17px;
+  margin-top: -10px;
+}
+.fa.fa-chevron-circle-down {
+  font-size: 23px;
+}
 /*--------------------------------- MIDDLE SECTION---------------------------------- */
 
 .middle-section {
@@ -72,7 +138,7 @@ i {
 .header {
   top: 0;
   position: sticky;
-  background-color: white;
+  background-color: var(--main-bg-color);
 }
 
 .topbar {
@@ -82,10 +148,10 @@ i {
   border-bottom: solid var(--main-border-color) 1px;
   padding-top: 0.6rem;
   padding-bottom: 1rem;
-  background-color: white;
+  background-color: var(--main-bg-color);
 }
 
-.user-profile-picture-header{
+.user-profile-picture-header {
   display: none;
   height: 2.5rem;
   border-radius: 50%;
@@ -138,6 +204,7 @@ i {
   border-color: transparent;
   font-size: 1.2rem;
   outline: none;
+  background: var(--main-bg-color);
 }
 
 .media-icons {
@@ -146,13 +213,13 @@ i {
   color: var(--main-button-color);
 }
 
-.media-icons-hover:hover{
-  color:var(--main-button-color);
-  text-shadow: 0 0 22px var(--main-button-color) ;
+.media-icons-hover:hover i {
+  color: var(--main-button-color);
+  text-shadow: 0 0 22px var(--main-button-color);
 }
 
 .border-posts-container {
-  background-color: #e6ecf0;
+  background-color: var(--main-border-color);
   padding: 0.25rem;
   border-bottom: solid var(--main-border-color) 1px;
 }
@@ -167,8 +234,12 @@ i {
   height: 3rem;
   border-radius: 50%;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
+.active .fa-home {
+  font-size: 23px;
+}
 /*-----------------POSTS------------------*/
 
 .post-content {
@@ -186,6 +257,10 @@ i {
   font-size: 16px;
   font-weight: 600;
   color: var(--main-text1-color);
+  cursor: pointer;
+}
+.Name:hover {
+  text-decoration: underline;
 }
 
 .ID {
@@ -193,6 +268,7 @@ i {
   font-size: 14px;
   font-weight: 400;
   color: grey;
+  cursor: pointer;
 }
 
 .content-text {
@@ -231,27 +307,39 @@ i {
   padding-left: 5rem;
 }
 
-
 /*-----------Hover-------------*/
 
-.comment-hover:hover{
-  color:rgb(5, 5, 173);
+.comment-hover:hover {
+  color: rgb(5, 5, 173);
   text-shadow: 0 0 10px rgb(5, 5, 173);
 }
 
-.retweet-hover:hover{
-  color:rgb(5, 194, 5);
+.retweet-hover:hover {
+  color: rgb(5, 194, 5);
   text-shadow: 0 0 15px rgb(5, 194, 5);
 }
 
-.like-hover:hover{
-  color:#ec0101;
-  text-shadow: 0 0 5px #ec0101 ;
+.like-hover:hover {
+  color: #ec0101;
+  text-shadow: 0 0 5px #ec0101;
 }
 
-.share-hover:hover{
+.liked {
+  color: #ec0101;
+  animation: liked 0.7s ease;
+}
+@keyframes liked {
+  0%,
+  50% {
+    text-shadow: 0 0 5px #ec0101;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+.share-hover:hover {
   color: #12cad6;
-  text-shadow: 0 0 15px #12cad6 ;
+  text-shadow: 0 0 15px #12cad6;
 }
 
 /*------------------------------- RIGHT SECTION------------------------------------- */
@@ -262,7 +350,7 @@ i {
 
 .search-main {
   position: fixed;
-  background-color: white;
+  background-color: var(--main-bg-color);
   top: 0;
   width: 100%;
 }
@@ -273,7 +361,7 @@ i {
   padding: 8px;
   border-radius: 2rem;
   border: none;
-  background-color: #e6ecf0;
+  background-color: var(--search-bar);
   color: grey;
   width: 22rem;
   margin: 0.5rem 120px 10px 22px;
@@ -288,7 +376,7 @@ i {
   outline: none;
   border-radius: 2rem;
   border: none;
-  background-color: #e6ecf0;
+  background-color: var(--search-bar);
   color: grey;
   font-size: 1rem;
 }
@@ -298,7 +386,7 @@ i {
 .WHR {
   border: none var(--main-border-color) 1px;
   border-radius: 16px;
-  background-color: #f5f8fa;
+  background-color: var(--whats);
   margin: 70px 120px 20px 22px;
 }
 
@@ -318,7 +406,7 @@ i {
 
 .p1:hover,
 .p2:hover {
-  background-color: #e6ecf0;
+  background-color: var(--wtf-hover);
 }
 
 .p11 {
@@ -362,7 +450,7 @@ i {
 .p22 {
   font-size: 16px;
   font-weight: 600;
-  color:var(--main-text1-color) ;
+  color: var(--main-text1-color);
 }
 
 .p23 {
@@ -384,13 +472,13 @@ i {
 
 .p5 {
   color: #1da1f2;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   padding: 12px 12px;
 }
 
 .p5:hover {
-  background-color: #e6ecf0;
+  background-color: var(--wtf-hover);
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
@@ -400,7 +488,7 @@ i {
 .follow_Section {
   border: none var(--main-border-color) 1px;
   border-radius: 16px;
-  background-color: #f5f8fa;
+  background-color: var(--whats);
   margin: 20px 120px 20px 22px;
 }
 
@@ -420,7 +508,7 @@ i {
 }
 
 .follow_container:hover {
-  background-color: #e6ecf0;
+  background-color: var(--wtf-hover);
 }
 
 .wrap {
@@ -432,6 +520,7 @@ i {
   height: 3rem;
   border-radius: 50%;
   margin-right: 0.75rem;
+  cursor: pointer;
 }
 
 .Name1 {
@@ -447,13 +536,15 @@ i {
 .Name-WTF {
   font-size: 16px;
   font-weight: 600;
-  color: black;
+  cursor: pointer;
+  color: var(--main-text1-color);
 }
 
 .ID-WTF {
   font-size: 14px;
   font-weight: 400;
   color: grey;
+  cursor: pointer;
 }
 
 .follow-button-container {
@@ -500,12 +591,12 @@ i {
   background-color: #1da1f2;
   color: white;
   border: none;
-  padding: 6px 16px;
+  padding: 9px 19px;
   cursor: pointer;
   text-align: center;
   border-radius: 4rem;
   margin-right: 2rem;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .follow-button {
@@ -532,12 +623,12 @@ i {
 .tweet-button1:hover,
 .tweet-button2:hover,
 .follow-button:hover {
-  background-color: #469fd6;
+  background-color: #2f81b4;
   color: white;
 }
 
-.float{
-	display: none;
+.float {
+  display: none;
 }
 
 /*--------------Responsive NavBar-----------------------*/
@@ -562,12 +653,11 @@ nav .fa {
   padding-bottom: 1rem;
 }
 
-
 /*-----------SCROLL BAR----------------*/
 
 /* width */
 ::-webkit-scrollbar {
-  width:8px;
+  width: 8px;
 }
 
 /* Track */
@@ -582,7 +672,7 @@ nav .fa {
 
 /*-----------------------------------Media Query----------------------------------*/
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   body {
     height: 100vh;
     /* overflow: scroll; */
@@ -594,16 +684,16 @@ nav .fa {
   .left-spacer-R,
   .right-section,
   .WH,
-  .border-posts-container{
+  .border-posts-container {
     display: none;
   }
 
   /*Header*/
 
-  .user-profile-picture-header{
+  .user-profile-picture-header {
     display: block;
-  } 
-  
+  }
+
   .topbar {
     display: flex;
     flex-direction: row;
@@ -622,21 +712,21 @@ nav .fa {
     margin-top: 0.4rem;
   }
 
-   /*Post*/
+  /*Post*/
 
-  #post-8{
+  #post-8 {
     margin-bottom: 3rem;
   }
 
-  .content-img{
+  .content-img {
     width: 100%;
-    margin-left:-0.5rem;
+    margin-left: -0.5rem;
   }
-  
+
   .comment {
     padding-left: 0;
   }
-  
+
   .retweet,
   .like,
   .share {
@@ -657,78 +747,75 @@ nav .fa {
 
   /*Floating Button*/
 
-  .float{
+  .float {
     display: block;
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:90px;
-    right:30px;
-    background-color:var(--main-button-color);
-    color:#FFF;
-    border-radius:50px;
-  }
-  
-  .my-float{
-    margin: 16px;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 90px;
+    right: 30px;
+    background-color: var(--main-button-color);
+    color: #fff;
+    border-radius: 50px;
   }
 
+  .my-float {
+    margin: 16px;
+  }
 }
 
 /*-----------------------------------Media Query----------------------------------*/
 
-@media screen  and (min-width: 601px) and (max-width: 768px){
-
+@media screen and (min-width: 601px) and (max-width: 768px) {
   body {
     height: 100vh;
   }
 
   .right-section,
-  .left-section{
+  .left-section {
     display: none;
   }
 
-  .left-spacer-R{
+  .left-spacer-R {
     flex: 0.5;
   }
 
-  .left-section-R{
+  .left-section-R {
     display: block;
     position: fixed;
     margin-left: 8%;
   }
 
-  .search-container{
-    width:26%;
+  .search-container {
+    width: 26%;
   }
 
   .WHR,
-  .follow_Section{
+  .follow_Section {
     width: 80%;
   }
-  
+
   /*Floating Button*/
 
-  .float{
+  .float {
     display: block;
   }
 
-  .float{
+  .float {
     display: block;
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:45%;
-    right:86%;
-    background-color:var(--main-button-color);
-    color:#FFF;
-    border-radius:50px;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 45%;
+    right: 86%;
+    background-color: var(--main-button-color);
+    color: #fff;
+    border-radius: 50px;
   }
-  
-  .my-float{
+
+  .my-float {
     margin: 16px;
   }
-
 }
 
 /*-----------------------------------Media Query----------------------------------*/
@@ -766,13 +853,12 @@ nav .fa {
 /*-----------------------------------Media Query----------------------------------*/
 
 @media screen and (min-width: 1280px) and (max-width: 1300px) {
-
   body {
     height: 100vh;
   }
 
   .left-section-R,
-  .left-spacer-R{
+  .left-spacer-R {
     display: none;
   }
 
@@ -799,13 +885,12 @@ nav .fa {
     color: white;
   }
 
-  .search-container{
-    width:26%;
+  .search-container {
+    width: 26%;
   }
 
   .WHR,
-  .follow_Section{
+  .follow_Section {
     width: 80%;
   }
-
 }
