@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
   const token = req.query.token;
+  console.log(token);
   if (!token) res.redirect("/?tokenError");
 
   try {
