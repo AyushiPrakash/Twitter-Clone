@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Login</title>
+    <link rel="icon" href="./Images/icon.png" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="icon"><i class="fa fa-twitter fa-3x"></i></div>
+      <h1 class="title">Log in to Twitter</h1>
+
+      <form class="formContainer" id="loginForm" method="POST" action="/login">
+        <div class="inputContainer">
+          <label class="email" for="email">Email Id</label>
+          <input
+            id="emailInput"
+            class="emailInput"
+            type="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="inputContainer">
+          <label class="password" for="password">Password</label>
+          <input
+            id="passwordInput"
+            class="passwordInput"
+            type="password"
+            name="password"
+            required
+          />
+        </div>
+
+        <button class="login-button" type="submit">Log in</button>
+      </form>
+      <a href="/signup"> <div class="signupLink">Sign up for Twitter</div></a>
+    </section>
+  </body>
+</html>
