@@ -39,7 +39,49 @@ router.post("/add", auth, (req, res) => {
 });
 
 //delete tweet
-//list all tweets
-//update likes
+
+router.get("/delete", auth, (req, res) => {
+  let id = req.query.id;
+  let userQuery = `SELECT * from USERS where email= "${req.user.email}"`;
+  con.query(userQuery, (err, results) => {
+    if (err) {
+      res.send({
+        status: 500,
+        message: err.message,
+      });
+    } else {
+      let deleteQuery = `DELETE from tweets where id="${id}" and userName="${results[0].userName}" `;
+      con.query(deleteQuery, (err, results) => {
+        if (err) {
+          res.send({
+            status: 500,
+            message: err.message,
+          });
+        } else {
+          res.redirect("/?token=" + req.query.token);
+        }
+      });
+    }
+  });
+});
+
+//like handler
+
+router.get("/like", auth, (req, res) => {
+  let id = req.query.id;
+  let likeQuery = `Update tweets Set likes = likes + 1 Where id="${id}"`;
+  con.query(likeQuery, (err, results) => {
+    if (err) {
+      res.send({
+        status: 500,
+        message: err.message,
+      });
+    } else {
+      res.redirect("/?token=" + req.query.token);
+    }
+  });
+});
+
+//unlike handler
 
 module.exports = router;

@@ -310,7 +310,7 @@ sup {
 /*-----------Hover-------------*/
 
 .comment-hover:hover {
-  color: rgb(5, 5, 173);
+  color: #12cad6;
   text-shadow: 0 0 10px rgb(5, 5, 173);
 }
 
@@ -338,7 +338,7 @@ sup {
   }
 }
 .share-hover:hover {
-  color: #12cad6;
+  color: black;
   text-shadow: 0 0 15px #12cad6;
 }
 
