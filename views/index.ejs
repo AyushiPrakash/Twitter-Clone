@@ -8,10 +8,11 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
+    <!-- <link rel="stylesheet" href="https://picsum.photos/seed/picsum/200/300"> -->
     <title>(20) Home / Twitter</title>
     <link rel="icon" href="./Images/icon.png" />
   </head>
+
   <body class="body">
     <main class="main">
       <!-- LEFT SECTION -->
@@ -90,7 +91,7 @@
           <div class="User-Tweet-Input">
             <img
               class="user-profile-picture"
-              src="./Images/userprofilephoto.jfif"
+              src="./Images/profilephoto.jfif"
               alt="Profile Photo"
             />
             <input
@@ -136,11 +137,11 @@
           <div class="post">
             <img
               class="profile_img-post"
-              src="./Images/profilephoto6.jfif"
+              src="./Images/profilepics/<%= Math.floor(Math.random()*14)+1 %>.jfif"
               alt="image"
             />
             <div class="post-content">
-              <div class="Name2">
+              <div class="post-userName">
                 <div class="Name"><%= tweet.name %></div>
                 <div class="ID">@<%= tweet.userName %></div>
               </div>
@@ -196,6 +197,7 @@
       </section>
 
       <!-- RIGHT SECTION -->
+
       <section class="right-section">
         <!-- SEARCH BAR SECTION -->
         <div class="search-container">
@@ -273,7 +275,7 @@
 
           <div class="follow_container">
             <div class="Name1">
-              <img class="img-WTF" src="./Images/profilepicture1.jfif" alt="" />
+              <img class="img-WTF" src="./Images/profilepics/1.jfif" alt="" />
               <div class="Namewrap">
                 <div class="Name-WTF">James Smith</div>
                 <div class="ID-WTF">@jamessmith</div>
@@ -286,7 +288,7 @@
 
           <div class="follow_container">
             <div class="Name1">
-              <img class="img-WTF" src="./Images/profilepicture2.jfif" alt="" />
+              <img class="img-WTF" src="./Images/profilepics/3.jfif" alt="" />
               <div class="Namewrap">
                 <div class="Name-WTF">Ellie Clark</div>
                 <div class="ID-WTF">@ellieclark</div>
@@ -299,7 +301,7 @@
 
           <div class="follow_container">
             <div class="Name1">
-              <img class="img-WTF" src="./Images/profilepicture3.jfif" alt="" />
+              <img class="img-WTF" src="./Images/profilepics/10.jfif" alt="" />
               <div class="Namewrap">
                 <div class="Name-WTF">Lily Cox</div>
                 <div class="ID-WTF">@lily03</div>
@@ -312,7 +314,7 @@
 
           <div class="follow_container">
             <div class="Name1">
-              <img class="img-WTF" src="./Images/profilepicture4.jfif" alt="" />
+              <img class="img-WTF" src="./Images/profilepics/8.jfif" alt="" />
               <div class="Namewrap">
                 <div class="Name-WTF">Marcel Gerald</div>
                 <div class="ID-WTF">@geraldmarcel</div>
@@ -325,7 +327,7 @@
 
           <div class="follow_container">
             <div class="Name1">
-              <img class="img-WTF" src="./Images/profilepicture5.jfif" alt="" />
+              <img class="img-WTF" src="./Images/profilepics/13.jfif" alt="" />
               <div class="Namewrap">
                 <div class="Name-WTF">Gaurav Singh</div>
                 <div class="ID-WTF">@gaurav12</div>
@@ -338,10 +340,10 @@
 
           <div class="follow_container">
             <div class="Name1">
-              <img class="img-WTF" src="./Images/profilepicture6.jfif" alt="" />
+              <img class="img-WTF" src="./Images/profilepics/4.jfif" alt="" />
               <div class="Namewrap">
-                <div class="Name-WTF">NDTV India</div>
-                <div class="ID-WTF">@ndtvinida</div>
+                <div class="Name-WTF">Mike James</div>
+                <div class="ID-WTF">@mikejames01</div>
               </div>
               <div class="follow-button-container">
                 <button type="button" class="follow-button">Follow</button>
@@ -378,14 +380,14 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(".fa-heart-o").click(function () {
-          // alert("hi")
-          $(this).toggleClass("fa-heart-o fa-heart");
-          $(this).closest(".like-hover").toggleClass("liked");
-          let likes = $(this).html();
-          if (this.className == "fa fa-heart") $(this).text(" " + ++likes);
-          else $(this).text(" " + --likes);
-        });
+      $(".fa-heart-o").click(function () {
+        // alert("hi")
+        $(this).toggleClass("fa-heart-o fa-heart");
+        $(this).closest(".like-hover").toggleClass("liked");
+        let likes = $(this).html();
+        if (this.className == "fa fa-heart") $(this).text(" " + ++likes);
+        else $(this).text(" " + --likes);
+      });
       $("#postsomething").keyup(function () {
         if ($(this).val() == "") {
           $(".tweet-button2").attr("disabled", true);
@@ -410,7 +412,7 @@
               " rgb(21, 32, 43)"
             );
             document.documentElement.style.setProperty(
-              "--search-bar",
+              "--search-input",
               " rgb(37,51,65)"
             );
             document.documentElement.style.setProperty(
@@ -449,6 +451,6 @@
         });
       });
     </script>
-    <script src="js/index.js"></script>
+    <!-- <script src="js/index.js"></script> -->
   </body>
 </html>

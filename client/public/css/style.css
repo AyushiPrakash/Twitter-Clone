@@ -226,7 +226,6 @@ sup {
   height: 3rem;
   border-radius: 50%;
   padding: 0.5rem;
-  cursor: pointer;
 }
 
 .active .fa-home {
@@ -240,7 +239,7 @@ sup {
   word-break: break-all;
 }
 
-.Name2 {
+.post-userName {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -351,7 +350,7 @@ sup {
   border: none;
   background-color: var(--search-input);
   color: grey;
-  width: 22rem;
+  width: 22.5rem;
   margin: 0.5rem 120px 10px 22px;
 }
 
