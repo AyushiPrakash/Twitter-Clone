@@ -74,17 +74,17 @@
       <section class="middle-section">
         <header class="header">
           <div class="topbar">
-            <img
-              class="user-profile-picture-header"
-              src="./Images/userprofilephoto.jfif"
-              alt="Profile Photo"
-            />
+            <span class="profile-icon"
+              ><i class="fa fa-twitter fa-2x"></i
+            ></span>
             <div class="home-title">Home</div>
             <span class="snowflake-logo"
               ><i class="fa fa-snowflake-o fa-lg"></i
             ></span>
           </div>
         </header>
+
+        <!-- WHAT'S HAPPENING SECTION -->
 
         <form class="WH" method="post" action="/tweet/add?token=<%= token %>">
           <div class="User-Tweet-Input">
@@ -104,6 +104,7 @@
               required
             />
           </div>
+
           <div class="tweet-controls">
             <div class="media-icons">
               <span class="media-icons-hover"
@@ -122,15 +123,13 @@
                 ><i class="fa fa-calendar-check-o fa-lg"></i
               ></span>
             </div>
-            <span
-              ><button id="tweet-button" type="submit" class="tweet-button2">
-                Tweet
-              </button></span
-            >
+            <span><button id="tweet-button" type="submit">Tweet</button></span>
           </div>
         </form>
 
         <div class="border-posts-container"></div>
+
+        <!-- POSTS -->
 
         <div class="Post-container">
           <% tweets.forEach(function(tweet,index){ %>
@@ -155,12 +154,6 @@
                 <span class="retweet"
                   ><div class="retweet-hover"><i class="fa fa-retweet"></i></div
                 ></span>
-                <!-- 
-                <span class="like"
-                  ><div class="like-hover">
-                    <i class="fa fa-heart-o"> <%= tweet.likes %></i>
-                  </div></span
-                > -->
 
                 <a
                   class="like"
@@ -172,10 +165,10 @@
                 </a>
 
                 <a
-                  class="share"
+                  class="delete"
                   href="/tweet/delete?token=<%= token %>&id=<%= tweet.id %>"
                 >
-                  <div class="share-hover"><i class="fa fa-trash-o"></i></div>
+                  <div class="delete-hover"><i class="fa fa-trash-o"></i></div>
                 </a>
               </div>
             </div>
@@ -205,15 +198,13 @@
       <!-- RIGHT SECTION -->
       <section class="right-section">
         <!-- SEARCH BAR SECTION -->
-        <div class="search-main">
-          <div class="search-container">
-            <i class="fa fa-search"></i>
-            <input
-              class="search-bar"
-              type="text"
-              placeholder="Search Twitter"
-            />
-          </div>
+        <div class="search-container">
+          <i class="fa fa-search" id="search"></i>
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Search Twitter"
+          />
         </div>
 
         <!-- WHAT'S HAPPENING SECTION -->
@@ -385,24 +376,16 @@
       </div>
     </nav>
 
-    <!--Floating Button-->
-
-    <div class="floating-button">
-      <a href="#" class="float">
-        <i class="fa fa-location-arrow fa-2x my-float"></i>
-      </a>
-    </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-      //   $(".fa-heart-o").click(function () {
-      //     // alert("hi")
-      //     $(this).toggleClass("fa-heart-o fa-heart");
-      //     $(this).closest(".like-hover").toggleClass("liked");
-      //     let likes = $(this).html();
-      //     if (this.className == "fa fa-heart") $(this).text(" " + ++likes);
-      //     else $(this).text(" " + --likes);
-      //   });
+        $(".fa-heart-o").click(function () {
+          // alert("hi")
+          $(this).toggleClass("fa-heart-o fa-heart");
+          $(this).closest(".like-hover").toggleClass("liked");
+          let likes = $(this).html();
+          if (this.className == "fa fa-heart") $(this).text(" " + ++likes);
+          else $(this).text(" " + --likes);
+        });
       $("#postsomething").keyup(function () {
         if ($(this).val() == "") {
           $(".tweet-button2").attr("disabled", true);

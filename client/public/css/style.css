@@ -8,7 +8,7 @@
   --main-text1-color: black;
   --main-border-color: rgb(212, 206, 206);
   --main-bg-color: white;
-  --search-bar: rgb(241, 239, 239);
+  --search-input: rgb(241, 239, 239);
   --whats: #f5f8fa;
   --wtf-hover: #e6ecf0;
 }
@@ -76,7 +76,6 @@
 }
 
 .left-section {
-  /* flex: 0.8; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -85,7 +84,8 @@
 }
 
 .left-section-R,
-.left-spacer-R {
+.left-spacer-R,
+.profile-icon {
   display: none;
 }
 
@@ -151,19 +151,11 @@ sup {
   background-color: var(--main-bg-color);
 }
 
-.user-profile-picture-header {
-  display: none;
-  height: 2.5rem;
-  border-radius: 50%;
-  margin-right: 0.75rem;
-  margin-left: 8px;
-}
-
 .home-title {
   color: var(--main-text1-color);
   font-size: 22px;
   font-weight: 700;
-  margin-left: 12px;
+  margin-left: 1rem;
 }
 
 .fa-snowflake-o {
@@ -243,7 +235,9 @@ sup {
 /*-----------------POSTS------------------*/
 
 .post-content {
+  max-width: 100%;
   padding: 0.8rem;
+  word-break: break-all;
 }
 
 .Name2 {
@@ -272,6 +266,7 @@ sup {
 }
 
 .content-text {
+  max-width: 100%;
   padding-bottom: 8px;
   font-size: 16px;
   font-weight: 400;
@@ -293,7 +288,7 @@ sup {
 .comment,
 .retweet,
 .like,
-.share {
+.delete {
   color: grey;
 }
 
@@ -303,7 +298,7 @@ sup {
 
 .retweet,
 .like,
-.share {
+.delete {
   padding-left: 5rem;
 }
 
@@ -321,7 +316,7 @@ sup {
 
 .like-hover:hover {
   color: #ec0101;
-  text-shadow: 0 0 5px #ec0101;
+  text-shadow: 0 0 10px #ec0101;
 }
 
 .liked {
@@ -337,9 +332,9 @@ sup {
     text-shadow: none;
   }
 }
-.share-hover:hover {
+.delete-hover:hover {
   color: black;
-  text-shadow: 0 0 15px #12cad6;
+  text-shadow: 0 0 18px black;
 }
 
 /*------------------------------- RIGHT SECTION------------------------------------- */
@@ -348,20 +343,13 @@ sup {
   flex: 1.7;
 }
 
-.search-main {
-  position: fixed;
-  background-color: var(--main-bg-color);
-  top: 0;
-  width: 100%;
-}
-
 .search-container {
   top: 0;
   width: 100%;
   padding: 8px;
   border-radius: 2rem;
   border: none;
-  background-color: var(--search-bar);
+  background-color: var(--search-input);
   color: grey;
   width: 22rem;
   margin: 0.5rem 120px 10px 22px;
@@ -371,10 +359,9 @@ sup {
   margin-left: 1rem;
 }
 
-.search-bar {
+.search-input {
   width: 80%;
   outline: none;
-  border-radius: 2rem;
   border: none;
   background-color: var(--search-bar);
   color: grey;
@@ -387,7 +374,7 @@ sup {
   border: none var(--main-border-color) 1px;
   border-radius: 16px;
   background-color: var(--whats);
-  margin: 70px 120px 20px 22px;
+  margin: 24px 120px 20px 22px;
 }
 
 .p0 {
@@ -577,7 +564,7 @@ sup {
   background-color: #1da1f2;
   border: none;
   margin-top: 0.5rem;
-  padding: 12px 90px;
+  padding: 0.75rem 5rem;
   margin-left: -30px;
   cursor: pointer;
   text-align: center;
@@ -586,16 +573,16 @@ sup {
   color: white;
 }
 
-.tweet-button2 {
+#tweet-button {
   outline: none;
   background-color: #1da1f2;
   color: white;
   border: none;
-  padding: 9px 19px;
+  padding: 9px 18px;
   cursor: pointer;
   text-align: center;
   border-radius: 4rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   font-size: 17px;
 }
 
@@ -613,7 +600,7 @@ sup {
 }
 
 .tweet-button1:active,
-.tweet-button2:active,
+#tweet-button:active,
 .follow-button:active {
   background-color: #247db4;
   color: white;
@@ -621,7 +608,7 @@ sup {
 }
 
 .tweet-button1:hover,
-.tweet-button2:hover,
+#tweet-button:hover,
 .follow-button:hover {
   background-color: #2f81b4;
   color: white;
@@ -635,7 +622,6 @@ sup {
 
 nav {
   display: none;
-  position: absolute;
 }
 
 nav .container {
@@ -643,8 +629,6 @@ nav .container {
   flex-direction: row;
   justify-content: space-evenly;
   background-color: var(--main-button-color);
-  width: 100vw;
-  /* padding-right: 1rem; */
 }
 
 nav .fa {
@@ -675,7 +659,6 @@ nav .fa {
 @media screen and (max-width: 600px) {
   body {
     height: 100vh;
-    /* overflow: scroll; */
   }
 
   .left-section,
@@ -683,16 +666,11 @@ nav .fa {
   .left-section-R,
   .left-spacer-R,
   .right-section,
-  .WH,
-  .border-posts-container {
+  .media-icons {
     display: none;
   }
 
   /*Header*/
-
-  .user-profile-picture-header {
-    display: block;
-  }
 
   .topbar {
     display: flex;
@@ -700,7 +678,7 @@ nav .fa {
     justify-content: space-between;
     border-bottom: solid var(--main-border-color) 1px;
     padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
     background-color: white;
   }
 
@@ -712,9 +690,37 @@ nav .fa {
     margin-top: 0.4rem;
   }
 
+  .profile-icon {
+    display: block;
+    margin-left: 1rem;
+    padding-top: 0.25rem;
+  }
+
+  .WH {
+    padding-top: 0.5vh;
+    padding-bottom: 0.5rem;
+  }
+
+  .tweet-input {
+    width: 80%;
+    margin-left: 1px;
+  }
+
+  .tweet-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-bottom: 2px;
+  }
+
+  #tweet-button {
+    float: right;
+    padding: 9px 20px;
+  }
+
   /*Post*/
 
-  #post-8 {
+  .post:last-child {
     margin-bottom: 3rem;
   }
 
@@ -729,38 +735,18 @@ nav .fa {
 
   .retweet,
   .like,
-  .share {
-    padding-left: 2rem;
+  .delete {
+    padding-left: 2.5rem;
   }
 
   /*Footer*/
 
   nav {
+    display: block;
     position: fixed;
-    left: 0;
     bottom: 0;
     width: 100%;
     color: white;
-    text-align: center;
-    display: block;
-  }
-
-  /*Floating Button*/
-
-  .float {
-    display: block;
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 90px;
-    right: 30px;
-    background-color: var(--main-button-color);
-    color: #fff;
-    border-radius: 50px;
-  }
-
-  .my-float {
-    margin: 16px;
   }
 }
 
@@ -772,121 +758,44 @@ nav .fa {
   }
 
   .right-section,
-  .left-section {
+  .left-section,
+  .left-spacer {
     display: none;
   }
 
   .left-spacer-R {
-    flex: 0.5;
+    flex: 1.5;
+    position: absolute;
   }
 
   .left-section-R {
     display: block;
-    position: fixed;
+    position: relative;
     margin-left: 8%;
   }
 
-  .search-container {
-    width: 26%;
-  }
-
-  .WHR,
-  .follow_Section {
-    width: 80%;
-  }
-
-  /*Floating Button*/
-
-  .float {
-    display: block;
-  }
-
-  .float {
-    display: block;
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 45%;
-    right: 86%;
-    background-color: var(--main-button-color);
-    color: #fff;
-    border-radius: 50px;
-  }
-
-  .my-float {
-    margin: 16px;
+  .middle-section {
+    flex: 2;
   }
 }
 
 /*-----------------------------------Media Query----------------------------------*/
 
-/* @media screen and (orientation:landscape){
-  body {
-    height: 100vh;
-  }
-
-  .left-section,
-  .tweet-button1{
-    display: none;
-  }  
-
-  .left-spacer-R{
-    flex: 0.5;
-  }
-
-  .left-section-R{
-    display: block;
-    position: fixed;
-    margin-left: 10%;
-  }
-  .search-container{
-    width:26%;
-  }
-
-  .WHR,
-  .follow_Section{
-    width: 80%;
-  }
-
-} */
-
-/*-----------------------------------Media Query----------------------------------*/
-
-@media screen and (min-width: 1280px) and (max-width: 1300px) {
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
   body {
     height: 100vh;
   }
 
   .left-section-R,
-  .left-spacer-R {
+  .left-spacer-R,
+  .left-section,
+  .left-spacer {
     display: none;
   }
 
-  .left-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    margin-left: 3%;
-  }
-
-  .tweet-button1 {
-    transition: 0.2s all;
-    outline: none;
-    background-color: #1da1f2;
-    border: none;
-    margin-top: 0.5rem;
-    padding: 12px 60px;
-    margin-left: 10px;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 4rem;
-    font-size: 20px;
-    color: white;
-  }
-
+  
   .search-container {
-    width: 26%;
+    width: 77%;
   }
 
   .WHR,
