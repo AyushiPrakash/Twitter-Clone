@@ -52,7 +52,7 @@
         <div class="container1">
           <input type="checkbox" class="switchBtn" />
         </div>
-        <button type="button" class="tweet-button1">Tweet</button>
+        <a href="/"><button type="button" class="logOut">Log Out</button> </a>
       </section>
       <section class="left-spacer"></section>
 
@@ -79,9 +79,10 @@
               ><i class="fa fa-twitter fa-2x"></i
             ></span>
             <div class="home-title">Home</div>
-            <span class="snowflake-logo"
+
+            <!-- <span class="snowflake-logo"
               ><i class="fa fa-snowflake-o fa-lg"></i
-            ></span>
+            ></span> -->
           </div>
         </header>
 
@@ -133,11 +134,14 @@
         <!-- POSTS -->
 
         <div class="Post-container">
-          <% tweets.forEach(function(tweet,index){ %>
+          <% tweets.forEach(function(tweet,index){ %> <% var asciiSum = 0 %> <%
+          [...tweet.name].forEach(function (char,index) {
+          asciiSum+=tweet.name.charCodeAt(index) }) %>
+
           <div class="post">
             <img
               class="profile_img-post"
-              src="./Images/profilepics/<%= Math.floor(Math.random()*14)+1 %>.jfif"
+              src="./Images/profilepics/<%= (asciiSum%14)+1 %>.jfif"
               alt="image"
             />
             <div class="post-content">

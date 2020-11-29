@@ -155,14 +155,14 @@ sup {
   color: var(--main-text1-color);
   font-size: 22px;
   font-weight: 700;
-  margin-left: 1rem;
+  margin-left: 0.75rem;
 }
 
-.fa-snowflake-o {
+/* .fa-snowflake-o {
   color: var(--main-button-color);
   margin-right: 16px;
   padding-top: 12px;
-}
+} */
 
 .User-Tweet-Input {
   display: flex;
@@ -345,12 +345,12 @@ sup {
 .search-container {
   top: 0;
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   border-radius: 2rem;
   border: none;
   background-color: var(--search-input);
   color: grey;
-  width: 22.5rem;
+  width: 22rem;
   margin: 0.5rem 120px 10px 22px;
 }
 
@@ -557,18 +557,18 @@ sup {
 
 /* BUTTONS */
 
-.tweet-button1 {
+.logOut {
   transition: 0.2s all;
   outline: none;
   background-color: #1da1f2;
   border: none;
   margin-top: 0.5rem;
-  padding: 0.75rem 5rem;
-  margin-left: -30px;
+  padding: 0.75rem 4rem;
+  margin-left: -16px;
   cursor: pointer;
   text-align: center;
   border-radius: 4rem;
-  font-size: 20px;
+  font-size: 16px;
   color: white;
 }
 
@@ -598,7 +598,7 @@ sup {
   font-size: 16px;
 }
 
-.tweet-button1:active,
+.logOut:active,
 #tweet-button:active,
 .follow-button:active {
   background-color: #247db4;
@@ -606,7 +606,7 @@ sup {
   transform: scale(0.98);
 }
 
-.tweet-button1:hover,
+.logOut:hover,
 #tweet-button:hover,
 .follow-button:hover {
   background-color: #2f81b4;
@@ -780,7 +780,7 @@ nav .fa {
 
 /*-----------------------------------Media Query----------------------------------*/
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   body {
     height: 100vh;
   }
@@ -792,7 +792,6 @@ nav .fa {
     display: none;
   }
 
-  
   .search-container {
     width: 77%;
   }
