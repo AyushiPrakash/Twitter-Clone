@@ -226,6 +226,7 @@ sup {
   height: 3rem;
   border-radius: 50%;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .active .fa-home {
