@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 5;
 const path = require("path");
 const jwt = require("jsonwebtoken");
+const multer = require("multer");
 
 const tweetRoute = require("./routes/tweetRoute");
 

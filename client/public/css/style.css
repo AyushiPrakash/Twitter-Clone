@@ -117,11 +117,11 @@ sup {
   font-size: 12px;
   background-color: #1da1f2;
   color: white;
-  border-radius: 15px;
-  padding: 3px;
+  border-radius: 8px;
+  padding: 4px;
   position: absolute;
-  margin-left: -17px;
-  margin-top: -10px;
+  margin-left: -22px;
+  margin-top: -9px;
 }
 .fa.fa-chevron-circle-down {
   font-size: 23px;
